@@ -1,0 +1,33 @@
+README
+
+1 Popis programu
+
+Program slúži ako sieťový analyzátor. Sieťové pakety sú filtrované podľa zadaných prepínačov pri spustení programu.
+Aplikácia spracúva tcp (-t | --tcp) a udp (-u || --udp) pakety na jednom z dostupných rozhraní. Rozhranie je vyberané pomocou prepínača -i.
+Prepínač -p určuje port, na ktorom sa dané pakety odchytávajú, ak nie je zadaný uvažujú sa všetky porty.
+Prepínač -n  určuje koľko filtorvaných paketov bude zobrazených na výstupe, ak nie je hodnota zadaná tak je zobrazený jeden paket.
+Nasledné sú pakety, ktoré spĺňajú všetky podmienky, vypísane na štandartný výstup. Okrem obsahu paketu sa zobrazia aj informácie 
+o čase, zdrojovej adrese, cieľovej adrese, zdrojovom porte a cieľovom porte paketu.
+
+2 Príklady spustenia
+
+./ipk-sniffer -i eth0
+./ipk-sniffer -i eth0 -p 80
+./ipk-sniffer -i eth0 -n 10
+./ipk-sniffer -i eth0 -p 80 -n 5
+./ipk-sniffer -i eth0 --udp
+./ipk-sniffer -i eth0 --tcp
+./ipk-sniffer -i eth0 -u
+./ipk-sniffer -i eth0 -t
+./ipk-sniffer -i eth0 -u -n 5 
+./ipk-sniffer -i eth0 -t -p 80
+./ipk-sniffer -i eth0 --udp --tcp -p 80 -n 12
+
+3 Zoznam odovzdaných súborov
+
+- Makefile
+- ipk-parsee.cpp
+- ipk-sniffer.cpp
+- ipk-sniffer.hpp
+- manual.pdf
+- README 
